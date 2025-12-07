@@ -32,6 +32,7 @@
     --gradiente-whatsapp: linear-gradient(135deg, #25D366, #128C7E);
     --rosa: #ff66cc;
     --rosa-escuro: #cc3399;
+    --threads-preto: linear-gradient(135deg, #000000, #333333);
 }
 
 /* RESET E CONFIGURAÇÕES GERAIS */
@@ -196,6 +197,7 @@ body {
 
 /* CORES DOS BOTÕES */
 .instagram { background: var(--gradiente-vermelho); }
+.threads { background: var(--threads-preto) !important; }
 .tiktok { background: var(--gradiente-azul); opacity: 0.7; }
 .comercial { background: var(--gradiente-verde); }
 .treinos { background: var(--gradiente-amarelo); }
