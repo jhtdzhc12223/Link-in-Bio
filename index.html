@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel — Fitness & Performance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER COM FOTO -->
+        <header class="header fade-in">
+            <img src="assets/gabriel-fitness-perfil.jpg" alt="Gabriel Fitness" class="profile-img">
+            <h1 class="profile-name">GABRIEL — FITNESS & PERFORMANCE</h1>
+            <p class="profile-tagline">Força • Disciplina • Evolução</p>
+        </header>
+
+        <!-- BIO -->
+        <section class="bio fade-in delay-1">
+            <p class="bio-text">
+                <span class="highlight">Atleta natural • Powerbuilding • Performance & Estética</span><br>
+                Conteúdo diário de treino e evolução • Buscando inspirar e dominar
+            </p>
+        </section>
+
+        <!-- LINKS PRINCIPAIS -->
+        <section class="links-section">
+            <!-- INSTAGRAM -->
+            <a href="https://instagram.com/gabrielalves9234" target="_blank" class="link-button fade-in delay-1">
+                <div class="link-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="link-text">
+                    📸 Meu Instagram — Vídeos diários de treino e evolução
+                    <span class="link-desc">Siga para acompanhar minha rotina e dicas</span>
+                </div>
+                <i class="fas fa-external-link-alt external-icon"></i>
+            </a>
+
+            <!-- TIKTOK (EM BREVE) -->
+            <div class="link-button tiktok fade-in delay-2">
+                <div class="link-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                <div class="link-text">
+                    🎥 TikTok — Em breve
+                    <span class="link-desc">Conteúdos rápidos, motivação e lifestyle (em breve)</span>
+                </div>
+                <span class="coming-soon">EM BREVE</span>
+            </div>
+
+            <!-- CONTATO PROFISSIONAL -->
+            <div class="link-button comercial fade-in delay-2" onclick="toggleContactSection()" style="cursor: pointer;">
+                <div class="link-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="link-text">
+                    📩 Contato Profissional (Parcerias & Publis)
+                    <span class="link-desc">Para marcas, colaborações e parcerias</span>
+                </div>
+                <i class="fas fa-chevron-down contact-chevron"></i>
+            </div>
+
+            <!-- SEÇÃO DE CONTATO (inicialmente oculta) -->
+            <div id="contactSection" class="contact-section hidden">
+                <div class="contact-title">📬 Escolha como entrar em contato:</div>
+                <div class="contact-options">
+                    <a href="https://instagram.com/gabrielalves9234" target="_blank" class="contact-option">
+                        <div class="contact-icon contact-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Instagram Direct</strong><br>
+                            <small>Respondo em até 24h</small>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    
+                    <a href="mailto:al4726390@gmail.com?subject=Parceria%20Profissional&body=Olá%20Gabriel,%20gostaria%20de%20conversar%20sobre%20uma%20possível%20parceria." target="_blank" class="contact-option">
+                        <div class="contact-icon contact-email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>E-mail Profissional</strong><br>
+                            <small>al4726390@gmail.com</small>
+                        </div>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- TREINOS PERSONALIZADOS -->
+            <div class="link-button treinos fade-in delay-3" onclick="togglePixSection()" style="cursor: pointer;">
+                <div class="link-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="link-text">
+                    💪 Montagem de Treinos Personalizados
+                    <span class="link-desc">Você manda seus dados, eu crio um treino focado no seu objetivo</span>
+                </div>
+                <i class="fas fa-chevron-down pix-chevron"></i>
+            </div>
+
+            <!-- SEÇÃO DE PREÇOS E PIX (inicialmente oculta) -->
+            <div id="pixSection" class="hidden">
+                <!-- PREÇOS -->
+                <div class="prices">
+                    <div class="price-tag">
+                        <span class="price-label">Iniciante:</span>
+                        <span class="price-value">R$10,00</span>
+                    </div>
+                    <div class="price-tag">
+                        <span class="price-label">Intermediário:</span>
+                        <span class="price-value">R$20,00</span>
+                    </div>
+                </div>
+
+                <!-- SEÇÃO PIX -->
+                <div class="pix-section">
+                    <div class="pix-title">
+                        <i class="fas fa-qrcode"></i> PAGAMENTO VIA PIX
+                    </div>
+                    <div class="pix-code" id="pixCode">125.119579-22</div>
+                    <button class="copy-btn" onclick="copyPixCode()">
+                        <i class="far fa-copy"></i> Copiar chave PIX
+                    </button>
+                    <p class="pix-note">
+                        Após o pagamento, entre em contato pelo Instagram com o comprovante
+                    </p>
+                </div>
+
+                <!-- AVISO IMPORTANTE -->
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <strong>Atenção:</strong> Este serviço é apenas montagem de treino (sem dieta ou acompanhamento integral)
+                </div>
+            </div>
+
+            <!-- SITE DE TREINO -->
+            <a href="https://treino-six-liart.vercel.app/" target="_blank" class="link-button fade-in delay-4">
+                <div class="link-icon" style="background: var(--gradiente-principal);">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="link-text">
+                    🏋️‍♂️ Meu Site de Treinos
+                    <span class="link-desc">Veja minha metodologia e exemplos de treinos</span>
+                </div>
+                <i class="fas fa-external-link-alt external-icon"></i>
+            </a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer fade-in delay-4">
+            <p class="footer-text">
+                © 2025 Gabriel — Conteúdo de treino e motivação.<br>
+                Todos os links oficiais estão nesta página.
+            </p>
+        </footer>
+    </div>
+
+    <!-- NOTIFICAÇÃO DE CÓPIA -->
+    <div id="copyNotification" class="copy-notification">
+        <i class="fas fa-check-circle"></i> Chave PIX copiada!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
