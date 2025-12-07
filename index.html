@@ -140,14 +140,100 @@
                 </div>
             </div>
 
-            <!-- SITE DE TREINO -->
-            <a href="https://treino-six-liart.vercel.app/" target="_blank" class="link-button fade-in delay-4">
+            <!-- SEÇÃO DE PROJETOS -->
+            <div class="link-button projetos fade-in delay-4" onclick="toggleProjectsSection()" style="cursor: pointer;">
                 <div class="link-icon" style="background: var(--gradiente-principal);">
-                    <i class="fas fa-dumbbell"></i>
+                    <i class="fas fa-code"></i>
                 </div>
                 <div class="link-text">
-                    🏋️‍♂️ Meu Site de Treinos
-                    <span class="link-desc">Veja minha metodologia e exemplos de treinos</span>
+                    🏋️‍♂️ Meus Projetos de Sites de Treino
+                    <span class="link-desc">Veja meus trabalhos e metodologia aplicada</span>
+                </div>
+                <i class="fas fa-chevron-down projects-chevron"></i>
+            </div>
+
+            <!-- SEÇÃO DE PROJETOS (inicialmente oculta) -->
+            <div id="projectsSection" class="projects-section hidden">
+                <div class="projects-title">💻 Meus Projetos Desenvolvidos</div>
+                
+                <div class="projects-grid">
+                    <!-- PROJETO 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>📋 Sistema de Treino Padrão</h3>
+                            <span class="project-badge">Projeto Principal</span>
+                        </div>
+                        <p class="project-desc">
+                            Sistema completo de divisão de treinos com exercícios, séries e repetições.
+                            Interface moderna com filtros por grupos musculares.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag"><i class="fas fa-dumbbell"></i> Treino ABC</span>
+                            <span class="feature-tag"><i class="fas fa-chart-line"></i> Progressão</span>
+                            <span class="feature-tag"><i class="fas fa-mobile-alt"></i> Responsivo</span>
+                        </div>
+                        <a href="https://treino-six-liart.vercel.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Ver Projeto Completo
+                        </a>
+                    </div>
+
+                    <!-- PROJETO 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>👩‍🦰 Treino Personalizado - Bia</h3>
+                            <span class="project-badge">Cliente Específico</span>
+                        </div>
+                        <p class="project-desc">
+                            Treino personalizado desenvolvido para uma cliente específica,
+                            com foco em objetivos individuais e acompanhamento detalhado.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag"><i class="fas fa-user-cog"></i> Personalizado</span>
+                            <span class="feature-tag"><i class="fas fa-calendar-check"></i> Acompanhamento</span>
+                            <span class="feature-tag"><i class="fas fa-heart"></i> Saúde & Bem-estar</span>
+                        </div>
+                        <a href="https://treino-bia.vercel.app/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Ver Projeto Completo
+                        </a>
+                    </div>
+
+                    <!-- ADICIONAR MAIS PROJETOS AQUI -->
+                    <div class="project-card add-project" onclick="addNewProject()">
+                        <div class="project-header">
+                            <h3>➕ Adicionar Novo Projeto</h3>
+                        </div>
+                        <p class="project-desc">
+                            Clique aqui para adicionar um novo projeto ao seu portfólio.
+                        </p>
+                        <div class="project-features">
+                            <span class="feature-tag"><i class="fas fa-plus"></i> Novo</span>
+                            <span class="feature-tag"><i class="fas fa-upload"></i> Upload</span>
+                            <span class="feature-tag"><i class="fas fa-edit"></i> Editar</span>
+                        </div>
+                        <div class="project-link" style="color: var(--cinza);">
+                            <i class="fas fa-magic"></i> Em breve mais projetos
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION -->
+                <div class="projects-cta">
+                    <p>
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>Quer um site de treino personalizado?</strong> 
+                        Entre em contato pelo Instagram ou e-mail!
+                    </p>
+                </div>
+            </div>
+
+            <!-- WHATSAPP PARA DÚVIDAS -->
+            <a href="https://wa.me/5511999999999?text=Olá%20Gabriel,%20vi%20seu%20site%20e%20gostaria%20de%20tirar%20algumas%20dúvidas%20sobre%20treinos." target="_blank" class="link-button fade-in delay-4">
+                <div class="link-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="link-text">
+                    💬 WhatsApp para Dúvidas Rápidas
+                    <span class="link-desc">Tire dúvidas sobre treinos e metodologia</span>
                 </div>
                 <i class="fas fa-external-link-alt external-icon"></i>
             </a>
@@ -159,12 +245,28 @@
                 © 2025 Gabriel — Conteúdo de treino e motivação.<br>
                 Todos os links oficiais estão nesta página.
             </p>
+            <p class="footer-credits">
+                Desenvolvido com <i class="fas fa-heart" style="color: var(--vermelho);"></i> por Gabriel
+            </p>
         </footer>
     </div>
 
     <!-- NOTIFICAÇÃO DE CÓPIA -->
     <div id="copyNotification" class="copy-notification">
         <i class="fas fa-check-circle"></i> Chave PIX copiada!
+    </div>
+
+    <!-- MODAL PARA ADICIONAR NOVO PROJETO -->
+    <div id="addProjectModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAddProjectModal()">&times;</span>
+            <h3><i class="fas fa-plus-circle"></i> Adicionar Novo Projeto</h3>
+            <p>Esta funcionalidade está em desenvolvimento.</p>
+            <p>Para adicionar um novo projeto, edite o arquivo <code>index.html</code> manualmente.</p>
+            <div class="modal-buttons">
+                <button onclick="closeAddProjectModal()" class="modal-btn cancel-btn">Fechar</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
