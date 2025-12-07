@@ -34,31 +34,45 @@ function copyPixCode() {
     const notification = document.getElementById('copyNotification');
     
     // Usando a API moderna de clipboard
-    navigator.clipboard.writeText(pixCode).then(() => {
-        // Mostrar notificação
-        notification.classList.add('show');
-        
-        // Esconder notificação após 3 segundos
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
-    }).catch(err => {
-        // Fallback para navegadores mais antigos
-        const textArea = document.createElement('textarea');
-        textArea.value = pixCode;
-        document.body.appendChild(textArea);
-        textArea.select();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(pixCode).then(() => {
+            showNotification(notification);
+        }).catch(err => {
+            fallbackCopy(pixCode, notification);
+        });
+    } else {
+        fallbackCopy(pixCode, notification);
+    }
+}
+
+// Fallback para navegadores mais antigos
+function fallbackCopy(text, notification) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
         document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        // Mostrar notificação
-        notification.classList.add('show');
-        
-        // Esconder notificação após 3 segundos
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
-    });
+        showNotification(notification);
+    } catch (err) {
+        console.error('Falha ao copiar: ', err);
+        alert('Não foi possível copiar. Copie manualmente: ' + text);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Mostrar notificação
+function showNotification(notification) {
+    notification.classList.add('show');
+    
+    // Esconder notificação após 3 segundos
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
 }
 
 // Adicionar evento de clique no código PIX para copiar também
@@ -67,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pixCodeElement) {
         pixCodeElement.addEventListener('click', copyPixCode);
         pixCodeElement.title = "Clique para copiar";
+        pixCodeElement.style.cursor = 'pointer';
     }
     
     // Efeito de hover nos botões de link
@@ -80,6 +95,17 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0)';
         });
     });
+    
+    // Adicionar tooltip ao código PIX
+    if (pixCodeElement) {
+        pixCodeElement.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'rgba(51, 204, 51, 0.2)';
+        });
+        
+        pixCodeElement.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = 'var(--preto)';
+        });
+    }
 });
 
 // Efeito de digitação no título (opcional)
