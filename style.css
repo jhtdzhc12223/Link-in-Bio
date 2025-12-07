@@ -30,6 +30,8 @@
     --gradiente-amarelo: linear-gradient(135deg, var(--amarelo), var(--amarelo-escuro));
     --gradiente-principal: linear-gradient(135deg, var(--vermelho), var(--azul));
     --gradiente-whatsapp: linear-gradient(135deg, #25D366, #128C7E);
+    --rosa: #ff66cc;
+    --rosa-escuro: #cc3399;
 }
 
 /* RESET E CONFIGURAÇÕES GERAIS */
@@ -286,11 +288,47 @@ body {
     font-weight: 700;
 }
 
+/* Badge especial para treino Bia */
+.project-badge[style*="ff66cc"] {
+    background: linear-gradient(135deg, var(--rosa), var(--rosa-escuro)) !important;
+}
+
 .project-desc {
     color: var(--cinza-claro);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 15px;
+}
+
+/* ESTILOS DE ESTATÍSTICAS DOS PROJETOS */
+.project-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+
+.stat-item i {
+    color: var(--azul-suave);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    font-size: 0.8rem;
+    color: var(--cinza-claro);
+    font-weight: 500;
 }
 
 .project-features {
@@ -309,6 +347,47 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+}
+
+/* BOTÕES DE CALL TO ACTION */
+.project-cta {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.whatsapp-btn, .insta-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+}
+
+.insta-btn {
+    background: var(--gradiente-vermelho);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    transform: translateY(-2px);
+}
+
+.insta-btn:hover {
+    background: var(--gradiente-vermelho);
+    transform: translateY(-2px);
 }
 
 .project-link {
@@ -781,6 +860,15 @@ body {
     .project-badge {
         align-self: flex-start;
     }
+    
+    .project-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-cta {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 480px) {
@@ -819,6 +907,12 @@ body {
     
     .project-features {
         flex-direction: column;
+    }
+    
+    .stat-item {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
     }
 }
 
