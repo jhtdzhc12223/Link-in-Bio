@@ -58,7 +58,7 @@
                 <div class="holographic-card">
                     <div class="holographic-border"></div>
                     <div class="holographic-bg"></div>
-                    <img src="assets/gabriel-fitness-perfil.jpg" alt="Gabriel Fitness" class="profile-img holographic-img" onerror="this.src='https://via.placeholder.com/200x200?text=GABRIEL+TECH'">
+                    <img src="assets/gabriel-fitness-perfil.jpg" alt="Gabriel Fitness" class="profile-img holographic-img">
                     <div class="holographic-glow"></div>
                 </div>
                 <div class="holographic-dots">
@@ -295,8 +295,8 @@
             </div>
 
             <!-- PIX SECTION -->
-            <div id="pixSection" class="hidden">
-                <div class="pix-section tech-card" data-scroll data-scroll-speed="0.7">
+            <div id="pixSection" class="pix-section hidden">
+                <div class="tech-card" data-scroll data-scroll-speed="0.7">
                     <div class="card-content">
                         <div class="section-title">
                             <i class="fas fa-qrcode"></i>
@@ -514,11 +514,11 @@
                             Contact me to develop your personalized training system or web application!
                         </p>
                         <div class="project-cta">
-                            <button class="cta-btn whatsapp">
+                            <button class="cta-btn whatsapp" onclick="window.open('https://wa.me/554384550149', '_blank')">
                                 <i class="fab fa-whatsapp"></i>
                                 WhatsApp
                             </button>
-                            <button class="cta-btn email">
+                            <button class="cta-btn email" onclick="window.location.href='mailto:al4726390@gmail.com'">
                                 <i class="fas fa-envelope"></i>
                                 Email
                             </button>
@@ -593,9 +593,9 @@
                 </div>
                 
                 <div class="footer-links">
-                    <a href="#" class="footer-link">Home</a>
-                    <a href="#projects" class="footer-link">Projects</a>
-                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="#" onclick="showSection('links')" class="footer-link">Home</a>
+                    <a href="#" onclick="showSection('projects')" class="footer-link">Projects</a>
+                    <a href="#" onclick="showSection('contact')" class="footer-link">Contact</a>
                     <a href="#" class="footer-link">Blog</a>
                 </div>
                 
