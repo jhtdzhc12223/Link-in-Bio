@@ -1,322 +1,687 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark-theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel — Fitness & Performance</title>
+    <meta name="description" content="Gabriel — Performance Digital & Fitness. Desenvolvimento tecnológico e alta performance.">
+    <title>Gabriel — Tech & Performance</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
-<body>
-    <div class="container">
-        <!-- HEADER COM FOTO -->
-        <header class="header fade-in">
-            <img src="assets/gabriel-fitness-perfil.jpg" alt="Gabriel Fitness" class="profile-img">
-            <h1 class="profile-name">GABRIEL — FITNESS & PERFORMANCE</h1>
-            <p class="profile-tagline">Força • Disciplina • Evolução</p>
-        </header>
-
-        <!-- BIO -->
-        <section class="bio fade-in delay-1">
-            <p class="bio-text">
-                <span class="highlight">Atleta natural • Powerbuilding • Performance & Estética</span><br>
-                Conteúdo diário de treino e evolução • Buscando inspirar e dominar
-            </p>
-        </section>
-
-        <!-- LINKS PRINCIPAIS -->
-        <section class="links-section">
-            <!-- INSTAGRAM -->
-            <a href="https://instagram.com/gabrielalves9234" target="_blank" class="link-button fade-in delay-1">
-                <div class="link-icon instagram">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="link-text">
-                    📸 Instagram — Vídeos diários de treino
-                    <span class="link-desc">Siga para acompanhar minha rotina e dicas</span>
-                </div>
-                <i class="fas fa-external-link-alt external-icon"></i>
-            </a>
-
-            <!-- THREADS -->
-            <a href="https://www.threads.net/@gabrielalves9234" target="_blank" class="link-button fade-in delay-1 threads">
-                <div class="link-icon">
-                    <i class="fa-brands fa-threads"></i>
-                </div>
-                <div class="link-text">
-                    🧵 Threads — Conversas e dicas rápidas
-                    <span class="link-desc">Dicas diárias, opiniões e discussões sobre fitness</span>
-                </div>
-                <i class="fas fa-external-link-alt external-icon"></i>
-            </a>
-
-            <!-- TIKTOK (EM BREVE) -->
-            <div class="link-button tiktok fade-in delay-2">
-                <div class="link-icon">
-                    <i class="fab fa-tiktok"></i>
-                </div>
-                <div class="link-text">
-                    🎥 TikTok — Em breve
-                    <span class="link-desc">Conteúdos rápidos, motivação e lifestyle (em breve)</span>
-                </div>
-                <span class="coming-soon">EM BREVE</span>
+<body data-scroll-container>
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="neon-loader"></div>
+            <div class="loading-text">
+                <span class="loading-char">G</span>
+                <span class="loading-char">A</span>
+                <span class="loading-char">B</span>
+                <span class="loading-char">R</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">E</span>
+                <span class="loading-char">L</span>
             </div>
-
-            <!-- CONTATO PROFISSIONAL -->
-            <div class="link-button comercial fade-in delay-2" onclick="toggleContactSection()" style="cursor: pointer;">
-                <div class="link-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="link-text">
-                    📩 Contato Profissional (Parcerias & Publis)
-                    <span class="link-desc">Para marcas, colaborações e parcerias</span>
-                </div>
-                <i class="fas fa-chevron-down contact-chevron"></i>
-            </div>
-
-            <!-- SEÇÃO DE CONTATO (inicialmente oculta) -->
-            <div id="contactSection" class="contact-section hidden">
-                <div class="contact-title">📬 Escolha como entrar em contato:</div>
-                <div class="contact-options">
-                    <a href="https://instagram.com/gabrielalves9234" target="_blank" class="contact-option">
-                        <div class="contact-icon contact-instagram">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>Instagram Direct</strong><br>
-                            <small>@gabrielalves9234 • Respondo em até 24h</small>
-                        </div>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    
-                    <a href="mailto:al4726390@gmail.com?subject=Parceria%20Profissional&body=Olá%20Gabriel,%0A%0AGostaria%20de%20conversar%20sobre%20uma%20possível%20parceria.%0A%0AAtenciosamente," class="contact-option">
-                        <div class="contact-icon contact-email">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>E-mail Profissional</strong><br>
-                            <small>al4726390@gmail.com • Para propostas formais</small>
-                        </div>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- TREINOS PERSONALIZADOS -->
-            <div class="link-button treinos fade-in delay-3" onclick="togglePixSection()" style="cursor: pointer;">
-                <div class="link-icon">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
-                <div class="link-text">
-                    💪 Montagem de Treinos Personalizados
-                    <span class="link-desc">Você manda seus dados, eu crio um treino focado no seu objetivo</span>
-                </div>
-                <i class="fas fa-chevron-down pix-chevron"></i>
-            </div>
-
-            <!-- SEÇÃO DE PREÇOS E PIX (inicialmente oculta) -->
-            <div id="pixSection" class="hidden">
-                <!-- PREÇOS -->
-                <div class="prices">
-                    <div class="price-tag">
-                        <span class="price-label">Iniciante:</span>
-                        <span class="price-value">R$10,00</span>
-                    </div>
-                    <div class="price-tag">
-                        <span class="price-label">Intermediário:</span>
-                        <span class="price-value">R$20,00</span>
-                    </div>
-                </div>
-
-                <!-- SEÇÃO PIX -->
-                <div class="pix-section">
-                    <div class="pix-title">
-                        <i class="fas fa-qrcode"></i> PAGAMENTO VIA PIX
-                    </div>
-                    <div class="pix-code" id="pixCode">125.119.579-22</div>
-                    <button class="copy-btn" onclick="copyPixCode()">
-                        <i class="far fa-copy"></i> Copiar chave PIX
-                    </button>
-                    <p class="pix-note">
-                        Após o pagamento, entre em contato pelo Instagram com o comprovante
-                    </p>
-                </div>
-
-                <!-- AVISO IMPORTANTE -->
-                <div class="disclaimer">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <strong>Atenção:</strong> Este serviço é apenas montagem de treino (sem dieta ou acompanhamento integral)
-                </div>
-            </div>
-
-            <!-- SEÇÃO DE PROJETOS -->
-            <div class="link-button projetos fade-in delay-4" onclick="toggleProjectsSection()" style="cursor: pointer;">
-                <div class="link-icon" style="background: var(--gradiente-principal);">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="link-text">
-                    🏋️‍♂️ Meus Projetos de Sites de Treino
-                    <span class="link-desc">Veja meus trabalhos e metodologia aplicada</span>
-                </div>
-                <i class="fas fa-chevron-down projects-chevron"></i>
-            </div>
-
-            <!-- SEÇÃO DE PROJETOS (inicialmente oculta) -->
-            <div id="projectsSection" class="projects-section hidden">
-                <div class="projects-title">💻 Meus Projetos Desenvolvidos</div>
-                
-                <div class="projects-grid">
-                    <!-- PROJETO 1 - TREINO AVANÇADO -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>💪 Programa de Treino Avançado G&L&V</h3>
-                            <span class="project-badge">Treino Avançado</span>
-                        </div>
-                        <p class="project-desc">
-                            Programa de treino intermediário/avançado para Gabriel, Luiz e Vinicius.
-                            Divisão de 5 dias: Peito/Tríceps, Quadríceps, Antebraço/Abdômen, Costas/Bíceps, Posterior.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag"><i class="fas fa-dumbbell"></i> 5 Dias</span>
-                            <span class="feature-tag"><i class="fas fa-chart-line"></i> Progressão</span>
-                            <span class="feature-tag"><i class="fas fa-users"></i> Grupo</span>
-                            <span class="feature-tag"><i class="fas fa-weight"></i> Powerbuilding</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-calendar-day"></i>
-                                <span>5 Dias/Semana</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-clock"></i>
-                                <span>120 Min/Dia</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-fire"></i>
-                                <span>32 Exercícios</span>
-                            </div>
-                        </div>
-                        <a href="https://treino-six-liart.vercel.app/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Treino Completo
-                        </a>
-                    </div>
-
-                    <!-- PROJETO 2 - TREINO BIA -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3>💖 Treino Personalizado - Bia</h3>
-                            <span class="project-badge" style="background: linear-gradient(135deg, #ff66cc, #cc3399);">Cliente Especial</span>
-                        </div>
-                        <p class="project-desc">
-                            Programa seguro para cliente com coluna frágil (pós-fratura). Focado em perda de gordura,
-                            ganho de glúteos e fortalecimento seguro. Treino adaptado para iniciantes femininas.
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag"><i class="fas fa-heart"></i> Segurança</span>
-                            <span class="feature-tag"><i class="fas fa-user-shield"></i> Adaptado</span>
-                            <span class="feature-tag"><i class="fas fa-venus"></i> Feminino</span>
-                            <span class="feature-tag"><i class="fas fa-weight-loss"></i> Emagrecimento</span>
-                        </div>
-                        <div class="project-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-bone"></i>
-                                <span>Coluna Protegida</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-running"></i>
-                                <span>+ Cardio</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-spa"></i>
-                                <span>Progressão Segura</span>
-                            </div>
-                        </div>
-                        <a href="https://treino-bia.vercel.app/" target="_blank" class="project-link">
-                            <i class="fas fa-external-link-alt"></i> Ver Treino Completo
-                        </a>
-                    </div>
-
-                    <!-- ADICIONAR MAIS PROJETOS -->
-                    <div class="project-card add-project" onclick="addNewProject()">
-                        <div class="project-header">
-                            <h3>🚀 Quer Seu Treino Personalizado?</h3>
-                        </div>
-                        <p class="project-desc">
-                            Entre em contato para desenvolvermos seu programa personalizado!
-                        </p>
-                        <div class="project-features">
-                            <span class="feature-tag"><i class="fas fa-user-check"></i> Personalizado</span>
-                            <span class="feature-tag"><i class="fas fa-clipboard-check"></i> Acompanhamento</span>
-                            <span class="feature-tag"><i class="fas fa-medal"></i> Resultados</span>
-                        </div>
-                        <div class="project-cta">
-                            <a href="https://wa.me/554384550149?text=Olá%20Gabriel,%20gostaria%20de%20saber%20mais%20sobre%20treinos%20personalizados!" target="_blank" class="whatsapp-btn">
-                                <i class="fab fa-whatsapp"></i> WhatsApp
-                            </a>
-                            <a href="https://instagram.com/gabrielalves9234" target="_blank" class="insta-btn">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CALL TO ACTION -->
-                <div class="projects-cta">
-                    <p>
-                        <i class="fas fa-lightbulb"></i> 
-                        <strong>Como funciona?</strong> 
-                        Analiso seus objetivos, limitações e rotina para criar um programa 100% personalizado.
-                    </p>
-                </div>
-            </div>
-
-            <!-- WHATSAPP PARA DÚVIDAS -->
-            <a href="https://wa.me/554384550149?text=Olá%20Gabriel,%20vi%20seu%20site%20e%20gostaria%20de%20tirar%20algumas%20dúvidas%20sobre%20treinos." target="_blank" class="link-button fade-in delay-4">
-                <div class="link-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="link-text">
-                    💬 WhatsApp para Dúvidas
-                    <span class="link-desc">+55 43 8455-0149 • Respondo em até 2h</span>
-                </div>
-                <i class="fas fa-external-link-alt external-icon"></i>
-            </a>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="footer fade-in delay-4">
-            <p class="footer-text">
-                © 2025 Gabriel — Conteúdo de treino e motivação.<br>
-                Todos os links oficiais estão nesta página.
-            </p>
-            <p class="footer-credits">
-                Desenvolvido com <i class="fas fa-heart" style="color: var(--vermelho);"></i> por Gabriel
-            </p>
-        </footer>
-    </div>
-
-    <!-- NOTIFICAÇÃO DE CÓPIA -->
-    <div id="copyNotification" class="copy-notification">
-        <i class="fas fa-check-circle"></i> Chave PIX copiada!
-    </div>
-
-    <!-- MODAL PARA ADICIONAR NOVO PROJETO -->
-    <div id="addProjectModal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeAddProjectModal()">&times;</span>
-            <h3><i class="fas fa-plus-circle"></i> Adicionar Novo Projeto</h3>
-            <p>Esta funcionalidade está em desenvolvimento.</p>
-            <p>Para adicionar um novo projeto, edite o arquivo <code>index.html</code> manualmente.</p>
-            <div class="modal-buttons">
-                <button onclick="closeAddProjectModal()" class="modal-btn cancel-btn">Fechar</button>
+            <div class="loading-subtitle">SYSTEMS LOADING...</div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
             </div>
         </div>
     </div>
 
+    <!-- PARTICLES BACKGROUND -->
+    <div id="particles-js"></div>
+
+    <!-- TECH OVERLAY -->
+    <div class="tech-overlay">
+        <div class="scanline"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- FLOATING ELEMENTS -->
+    <div class="floating-shapes">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container" data-scroll-section>
+        <!-- HEADER COM HOLOGRAFICO -->
+        <header class="header fade-in" data-scroll data-scroll-speed="1">
+            <div class="holographic-container">
+                <div class="holographic-card">
+                    <div class="holographic-border"></div>
+                    <div class="holographic-bg"></div>
+                    <img src="assets/gabriel-fitness-perfil.jpg" alt="Gabriel Fitness" class="profile-img holographic-img" onerror="this.src='https://via.placeholder.com/200x200?text=GABRIEL+TECH'">
+                    <div class="holographic-glow"></div>
+                </div>
+                <div class="holographic-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            <h1 class="profile-name typewriter-text">
+                <span class="tech-gradient">GABRIEL</span>
+                <span class="tech-subtitle">
+                    <span class="cyber-text">TECH & PERFORMANCE</span>
+                    <span class="cyber-line"></span>
+                </span>
+            </h1>
+            
+            <div class="tech-badge">
+                <i class="fas fa-microchip"></i>
+                <span>FULL STACK DEVELOPER</span>
+            </div>
+            
+            <p class="profile-tagline">
+                <span class="typing-text" data-words='["CODE • STRENGTH • EVOLUTION", "TECHNOLOGY • FITNESS • INNOVATION", "BUILDING THE FUTURE"]'></span>
+            </p>
+
+            <!-- STATS BAR -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="100">0</div>
+                    <div class="stat-label">PROJECTS</div>
+                </div>
+                <div class="stat-divider">|</div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="5">0</div>
+                    <div class="stat-label">YEARS TECH</div>
+                </div>
+                <div class="stat-divider">|</div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="50">0</div>
+                    <div class="stat-label">CLIENTS</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- TECH BIO -->
+        <section class="bio fade-in delay-1" data-scroll data-scroll-speed="0.8">
+            <div class="tech-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-title">terminal:~/gabriel-profile</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="command-line">
+                        <span class="prompt">$</span>
+                        <span class="command">whoami</span>
+                    </div>
+                    <div class="output">
+                        <span class="output-text">
+                            <span class="highlight">>> NATURAL ATHLETE • POWERBUILDING • FULL-STACK DEVELOPER</span><br>
+                            >> DAILY TRAINING CONTENT & TECH DEVELOPMENT<br>
+                            >> SEEKING TO INSPIRE AND DOMAINATE IN BOTH WORLDS
+                        </span>
+                    </div>
+                    <div class="command-line">
+                        <span class="prompt">$</span>
+                        <span class="command">skills --show-all</span>
+                    </div>
+                    <div class="output">
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">HTML/CSS/JS</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">React/Vue</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">UI/UX Design</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECH NAVIGATION -->
+        <nav class="tech-nav" data-scroll data-scroll-speed="0.5">
+            <div class="nav-container">
+                <button class="nav-item active" data-section="links">
+                    <i class="fas fa-rocket"></i>
+                    <span>MAIN LINKS</span>
+                </button>
+                <button class="nav-item" data-section="projects">
+                    <i class="fas fa-code"></i>
+                    <span>PROJECTS</span>
+                </button>
+                <button class="nav-item" data-section="contact">
+                    <i class="fas fa-comments"></i>
+                    <span>CONTACT</span>
+                </button>
+                <div class="nav-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- LINKS SECTION -->
+        <section class="links-section active-section" id="linksSection">
+            <!-- INSTAGRAM COM HOVER 3D -->
+            <a href="https://instagram.com/gabrielalves9234" target="_blank" class="tech-card fade-in delay-1" data-scroll data-scroll-speed="0.3">
+                <div class="card-content">
+                    <div class="card-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>📸 INSTAGRAM — DAILY CONTENT</h3>
+                        <p class="card-desc">Follow for training routines, tech insights, and development</p>
+                        <div class="card-stats">
+                            <span><i class="fas fa-eye"></i> 10K+ Views</span>
+                            <span><i class="fas fa-heart"></i> 500+ Likes</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text">CONNECT</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </a>
+
+            <!-- THREADS -->
+            <a href="https://www.threads.net/@gabrielalves9234" target="_blank" class="tech-card fade-in delay-1 threads" data-scroll data-scroll-speed="0.4">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fa-brands fa-threads"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>🧵 THREADS — TECH DISCUSSIONS</h3>
+                        <p class="card-desc">Quick tips, opinions, and tech discussions</p>
+                        <div class="card-stats">
+                            <span><i class="fas fa-comment"></i> 200+ Threads</span>
+                            <span><i class="fas fa-share"></i> Active Daily</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text">JOIN</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </a>
+
+            <!-- TIKTOK COM COUNTDOWN -->
+            <div class="tech-card tiktok fade-in delay-2" data-scroll data-scroll-speed="0.5" onclick="showLaunchCountdown()">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fab fa-tiktok"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>🎥 TIKTOK — COMING SOON</h3>
+                        <p class="card-desc">Quick tech tutorials and fitness motivation</p>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="days">00</div>
+                                <div class="countdown-label">DAYS</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="hours">00</div>
+                                <div class="countdown-label">HOURS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text notify-btn" onclick="event.stopPropagation(); notifyMe()">
+                            <i class="fas fa-bell"></i> NOTIFY ME
+                        </span>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </div>
+
+            <!-- TRAINING SERVICES -->
+            <div class="tech-card treinos fade-in delay-3" data-scroll data-scroll-speed="0.6" onclick="togglePixSection()">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-dumbbell"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>💪 PERSONALIZED TRAINING PROGRAMS</h3>
+                        <p class="card-desc">Send your data, I create a focused training plan</p>
+                        <div class="pricing-tags">
+                            <span class="pricing-tag beginner">
+                                <span class="pricing-label">BEGINNER:</span>
+                                <span class="pricing-value">R$10.00</span>
+                            </span>
+                            <span class="pricing-tag intermediate">
+                                <span class="pricing-label">INTERMEDIATE:</span>
+                                <span class="pricing-value">R$20.00</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text">VIEW DETAILS</span>
+                        <i class="fas fa-chevron-down pix-chevron"></i>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </div>
+
+            <!-- PIX SECTION -->
+            <div id="pixSection" class="hidden">
+                <div class="pix-section tech-card" data-scroll data-scroll-speed="0.7">
+                    <div class="card-content">
+                        <div class="section-title">
+                            <i class="fas fa-qrcode"></i>
+                            <span>PAYMENT VIA PIX</span>
+                        </div>
+                        
+                        <div class="pix-visual">
+                            <div class="pix-qr-code">
+                                <div class="qr-placeholder">
+                                    <div class="qr-lines">
+                                        <div class="qr-line"></div>
+                                        <div class="qr-line"></div>
+                                        <div class="qr-line"></div>
+                                        <div class="qr-line"></div>
+                                    </div>
+                                    <div class="qr-text">PIX CODE</div>
+                                </div>
+                            </div>
+                            <div class="pix-info">
+                                <div class="pix-code-container">
+                                    <div class="pix-label">PIX KEY (CPF):</div>
+                                    <div class="pix-code" id="pixCode" onclick="copyPixCode()">
+                                        125.119.579-22
+                                        <div class="copy-hint">Click to copy</div>
+                                    </div>
+                                </div>
+                                <button class="tech-btn copy-btn" onclick="copyPixCode()">
+                                    <i class="far fa-copy"></i>
+                                    <span>COPY PIX KEY</span>
+                                    <div class="btn-glow"></div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="pix-note">
+                            <i class="fas fa-info-circle"></i>
+                            After payment, contact via Instagram with the receipt
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECH PROJECTS -->
+            <div class="tech-card projetos fade-in delay-4" data-scroll data-scroll-speed="0.8" onclick="toggleProjectsSection()">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>🚀 TECH & FITNESS PROJECTS</h3>
+                        <p class="card-desc">See my development work and applied methodology</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text">VIEW PROJECTS</span>
+                        <i class="fas fa-chevron-down projects-chevron"></i>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </div>
+
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/554384550149?text=Olá%20Gabriel,%20vi%20seu%20site%20e%20gostaria%20de%20tirar%20algumas%20dúvidas%20sobre%20treinos." target="_blank" class="tech-card fade-in delay-4" data-scroll data-scroll-speed="0.9">
+                <div class="card-content">
+                    <div class="card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-text">
+                        <h3>💬 WHATSAPP FOR QUESTIONS</h3>
+                        <p class="card-desc">+55 43 8455-0149 • Response within 2 hours</p>
+                        <div class="status-indicator">
+                            <div class="status-dot online"></div>
+                            <span class="status-text">ONLINE NOW</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span class="action-text">MESSAGE</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </div>
+                </div>
+                <div class="card-background"></div>
+                <div class="card-border"></div>
+            </a>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="projects-section hidden" id="projectsSection">
+            <div class="section-header" data-scroll data-scroll-speed="0.5">
+                <h2 class="section-title">
+                    <i class="fas fa-code-branch"></i>
+                    <span>MY TECH PROJECTS</span>
+                </h2>
+                <p class="section-subtitle">Combining technology and fitness innovation</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- PROJETO 1 -->
+                <div class="project-card" data-scroll data-scroll-speed="0.6">
+                    <div class="project-badge">ADVANCED</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>💪 Advanced Training System G&L&V</h3>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JS</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Advanced training program with 5-day split. Responsive design with interactive exercise tracking.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>5-Day Split</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Progress Tracking</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-value">32</div>
+                                <div class="stat-label">Exercises</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">120</div>
+                                <div class="stat-label">Min/Day</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">Custom</div>
+                            </div>
+                        </div>
+                        <a href="https://treino-six-liart.vercel.app/" target="_blank" class="project-link">
+                            <span>VIEW PROJECT</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+                <!-- PROJETO 2 -->
+                <div class="project-card" data-scroll data-scroll-speed="0.7">
+                    <div class="project-badge special">SPECIAL</div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>💖 Custom Training - Bia</h3>
+                            <div class="project-tech">
+                                <span class="tech-badge">UI/UX</span>
+                                <span class="tech-badge">Responsive</span>
+                                <span class="tech-badge">Animation</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">
+                            Safe training program for clients with spine concerns. Focus on safety and gradual progression.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Safety First</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-female"></i>
+                                <span>Women Focused</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Protected</span>
+                            </div>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-value">100%</div>
+                                <div class="stat-label">Safe</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">30+</div>
+                                <div class="stat-label">Exercises</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">Support</div>
+                            </div>
+                        </div>
+                        <a href="https://treino-bia.vercel.app/" target="_blank" class="project-link">
+                            <span>VIEW PROJECT</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+                <!-- ADD PROJECT -->
+                <div class="project-card add-project" data-scroll data-scroll-speed="0.8" onclick="showContactModal()">
+                    <div class="project-content">
+                        <div class="add-project-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>Want Your Custom Project?</h3>
+                        <p class="project-desc">
+                            Contact me to develop your personalized training system or web application!
+                        </p>
+                        <div class="project-cta">
+                            <button class="cta-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </button>
+                            <button class="cta-btn email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section hidden" id="contactSection">
+            <div class="section-header" data-scroll data-scroll-speed="0.5">
+                <h2 class="section-title">
+                    <i class="fas fa-comments"></i>
+                    <span>CONTACT ME</span>
+                </h2>
+                <p class="section-subtitle">Let's build something amazing together</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card" data-scroll data-scroll-speed="0.6">
+                    <div class="contact-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram Direct</h3>
+                    <p>@gabrielalves9234</p>
+                    <p class="contact-desc">Quick responses, daily updates</p>
+                    <a href="https://instagram.com/gabrielalves9234" target="_blank" class="contact-link">
+                        <span>SEND MESSAGE</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+                <div class="contact-card" data-scroll data-scroll-speed="0.7">
+                    <div class="contact-icon email">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Professional Email</h3>
+                    <p>al4726390@gmail.com</p>
+                    <p class="contact-desc">Formal proposals and detailed discussions</p>
+                    <a href="mailto:al4726390@gmail.com" class="contact-link">
+                        <span>SEND EMAIL</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+
+                <div class="contact-card" data-scroll data-scroll-speed="0.8">
+                    <div class="contact-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Business</h3>
+                    <p>+55 43 8455-0149</p>
+                    <p class="contact-desc">Instant responses, project discussions</p>
+                    <a href="https://wa.me/554384550149" target="_blank" class="contact-link">
+                        <span>START CHAT</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer fade-in delay-4" data-scroll data-scroll-speed="1">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">G</div>
+                    <div class="logo-text">
+                        <span class="logo-name">GABRIEL</span>
+                        <span class="logo-tagline">TECH & PERFORMANCE</span>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Blog</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://instagram.com/gabrielalves9234" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.threads.net/@gabrielalves9234" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-threads"></i>
+                    </a>
+                    <a href="https://wa.me/554384550149" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:al4726390@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="footer-copyright">
+                    <p>© 2024 GABRIEL — Tech & Performance. All rights reserved.</p>
+                    <p class="footer-credits">
+                        Built with <i class="fas fa-heart pulse"></i> and 
+                        <i class="fas fa-code"></i> by Gabriel
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-tech">
+                <div class="tech-stats">
+                    <span><i class="fas fa-server"></i> System Online</span>
+                    <span><i class="fas fa-signal"></i> 100% Uptime</span>
+                    <span><i class="fas fa-shield-alt"></i> Secure Connection</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODALS -->
+    <div id="notificationModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-bell"></i> Notification Set!</h3>
+                <span class="close-modal" onclick="closeNotificationModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>You'll be notified when TikTok launches!</p>
+                <div class="modal-icon">
+                    <i class="fab fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="countdownModal" class="modal hidden">
+        <div class="modal-content countdown">
+            <div class="modal-header">
+                <h3><i class="fab fa-tiktok"></i> Launch Countdown</h3>
+                <span class="close-modal" onclick="closeCountdownModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="countdown-display">
+                    <div class="countdown-item large">
+                        <div class="countdown-value" id="modal-days">00</div>
+                        <div class="countdown-label">DAYS</div>
+                    </div>
+                    <div class="countdown-item large">
+                        <div class="countdown-value" id="modal-hours">00</div>
+                        <div class="countdown-label">HOURS</div>
+                    </div>
+                    <div class="countdown-item large">
+                        <div class="countdown-value" id="modal-minutes">00</div>
+                        <div class="countdown-label">MINUTES</div>
+                    </div>
+                    <div class="countdown-item large">
+                        <div class="countdown-value" id="modal-seconds">00</div>
+                        <div class="countdown-label">SECONDS</div>
+                    </div>
+                </div>
+                <p class="modal-text">TikTok channel launching soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
